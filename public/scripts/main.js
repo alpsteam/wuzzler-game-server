@@ -29,11 +29,10 @@ function updateDOM() {
     html_status.textContent = score["status"];
     html_team_1.textContent = score["team_1"];
     html_team_2.textContent = score["team_2"];
-    button_game_status.textContent = score["status"];
 
     if(!score["status"]) "Something bad happened.";
-    else if(score["status"]=="started") button_game_status.textContent = "Stop game";
-    else if(score["status"]=="finished" || score["status"]=="stopped") button_game_status.textContent = "Start new game";
+    else if(score["status"]=="started") button_game_status.src = "images/stop_button.png";
+    else if(score["status"]=="finished" || score["status"]=="stopped") button_game_status.src = "images/start_button.png";
 }
 
 // fetch score with GET request

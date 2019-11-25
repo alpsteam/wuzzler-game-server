@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Cloud Wuzzler</title>
+<html lang="en"><head>
+  <title>Autonomous Cloud Wuzzler</title>
+  <link href="scripts/bootstrap.css" rel="stylesheet">
+  <link href="scripts/album.css" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Wuzzler Score</h1>
-    <p>Game ID:<span id="game_id"></span></p>
-    <button id="button_game_status" onclick="updateGameStatus()"></button>
-    <p>Game status:<span id="status"></span></p>
-    <p>Score Team 1:<span id="team_1"></span></p>
-    <button onclick="correctScore('team_1',1)">+</button>
-    <button onclick="correctScore('team_1',-1)">-</button>
-    <p>Score Team 2:<span id="team_2"></span></p>
-    <button onclick="correctScore('team_2',1)">+</button>
-    <button onclick="correctScore('team_2',-1)">-</button>
-     
-    <script src="scripts/main.js"></script>
-</body>
-</html> 
+  <header>
+    <div class="navbar box-shadow">
+      <div class="container">
+        <span class="oracle_logo"><img src="images/oracle_logo_neu.png"></span>
+        <!-- <span class="top_right">
+          <span><img src="images/home.png"></span>
+          <span><img src="images/divider_line.png"></span>
+          <span><img src="images/logout.png"></span>
+        </span> -->
+      </div>
+    </div>
+  </header>
+  
+  <main class="main_area container" role="main">
+    
+    <div class="smart_txt">Autonomous Cloud Wuzzler</div>
+    <div class="current_txt">The first to score 10 goals wins!</div>
+    <div class="block_box">
+      <div class="first_box">
+        <p class="number" id="team_1">-</p>
+        <p id="team1name" class="team_name">Blue</p>
+        <div class="correction" id="plus_blue_btn" onclick="correctScore('team_1',1)">+</div>
+        <div class="correction" id="minus_blue_btn" onclick="correctScore('team_1',-1)">-</div>
+      </div>
+      <div class="middle_divider"><img src="images/ball.png"></div>
+      <div class="second_box">
+        <p class="number" id="team_2">-</p>
+        <p id="team2name" class="team_name">Red</p>
+        <div class="correction" id="plus_red_btn" onclick="correctScore('team_2',1)">+</div>
+        <div class="correction" id="minus_red_btn" onclick="correctScore('team_2',-1)">-</div>
+      </div>
+    </div>
+    <div class="time_txt"><p id="timer"></p></div>
+    <div class="btn_area">
+        <div class="start_btn"><img id="button_game_status" src="images/start_button.png" onclick="updateGameStatus()"></div>
+    </div>
+    <p>Game ID:<span id="game_id"></span>, Game status:<span id="status"></span></p>
+  </main>
+  <script src="scripts/main.js"></script>
+</body></html>
