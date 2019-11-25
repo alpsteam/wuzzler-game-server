@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Wuzzler</title>
+</head>
+<body>
+    <h1>Wuzzler Score</h1>
+    <p>Game ID:<span id="game_id"></span></p>
+    <button id="button_game_status" onclick="updateGameStatus()"></button>
+    <p>Game status:<span id="status"></span></p>
+    <p>Score Team 1:<span id="team_1"></span></p>
+    <button onclick="correctScore('team_1',1)">+</button>
+    <button onclick="correctScore('team_1',-1)">-</button>
+    <p>Score Team 2:<span id="team_2"></span></p>
+    <button onclick="correctScore('team_2',1)">+</button>
+    <button onclick="correctScore('team_2',-1)">-</button>
+     
+    <script src="scripts/main.js"></script>
+</body>
+</html> 
