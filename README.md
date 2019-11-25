@@ -31,10 +31,12 @@ export DOCKER_REGISTRY_SERVER=fra.ocir.io
 export DOCKER_USER=orasealps/oracleidentitycloudservice/<your-email-address>
 export DOCKER_PASSWORD=<your-api-key>
 
-kubectl create secret docker-registry ocirkey \                     
+kubectl create secret docker-registry ocirkey \
   --docker-server=$DOCKER_REGISTRY_SERVER \
   --docker-username=$DOCKER_USER \
   --docker-password=$DOCKER_PASSWORD
+
+kubectl get secrets
 ```
 
 #### Deploy the application
