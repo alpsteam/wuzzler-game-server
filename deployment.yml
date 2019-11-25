@@ -1,0 +1,31 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: wuzzler-game-server-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels: # labels to select/identify the deployment
+        app: wuzzler-game-server  
+    spec:     # pod spec                  
+      containers: 
+      - name: game-server 
+        image: fra.ocir.io/orasealps/wuzzler/game-server:1.1 # image we pushed
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: ocirkey
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wuzzler-game-server-svc
+spec:
+  selector:
+    app: wuzzler-game-server
+  ports:
+    - port: 8088
+      targetPort: 8080
+  type: ClusterIP
