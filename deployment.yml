@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: wuzzler-game-server-deployment
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels: # labels to select/identify the deployment
@@ -11,7 +11,7 @@ spec:
     spec:     # pod spec                  
       containers: 
       - name: game-server 
-        image: fra.ocir.io/orasealps/wuzzler/game-server:1.1 # image we pushed
+        image: fra.ocir.io/orasealps/wuzzler/game-server:1.2 # image we pushed
         ports:
         - containerPort: 8080
       imagePullSecrets:
