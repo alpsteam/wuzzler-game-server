@@ -1,6 +1,8 @@
 const bodyParser = require("body-parser");
 const express = require('express');
+const SSEChannel = require('sse-pubsub');
 const app = express();
+const channel = new SSEChannel();
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -44,16 +46,16 @@ app.put("/score", (req,res) => {
   } else {
     res.status(400).send('Update score only when game is "started" and change status only to "started" or "stopped".');
   }
-  updateScoreAtClient(sse_request,sse_response);
+  updateScoreAtClient();
   res.send(score);
 })
 
 function scoreTeam1(event) {
-  score.team_1 += event["team_1"];
+  score.team_1 += parseInt(event["team_1"]);
 }
 
 function scoreTeam2(event) {
-  score.team_2 += event["team_2"];
+  score.team_2 += parseInt(event["team_2"]);
 }
 
 function newGame() {
@@ -93,25 +95,11 @@ function checkForWinner() {
   }
 }
 
-function updateScoreAtClient(req, res) {
-  let messageId = 0;
-  res.write(`id: ${messageId}\n`);
-  res.write(`data: ${JSON.stringify(score)}\n\n`);
-  messageId += 1;
+function updateScoreAtClient() {
+  channel.publish(JSON.stringify(score), "event");
 }
 
-app.get('/wuzzler-stream', (req, res) => {
-  // SSE Setup
-  res.writeHead(200, {
-    'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache',
-    'Connection': 'keep-alive',
-  });
-  res.write('\n');
-  sse_response = res;
-  sse_request = req;
-  updateScoreAtClient(req, res);
-});
+app.get('/wuzzler-stream', (req, res) => channel.subscribe(req, res));
 
 app.listen(8080, function () {
   console.log('Welcome to ACW!');

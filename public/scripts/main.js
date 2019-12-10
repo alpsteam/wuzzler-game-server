@@ -13,8 +13,9 @@ let score = null;
 // create sse stream to get updates from server
 const sseSource = new EventSource('/wuzzler-stream');
 sseSource.onerror = () => { refreshPage("sse connection failed") };
-sseSource.addEventListener('message', (e) => {
-    score = JSON.parse(e.data);
+sseSource.addEventListener('event', ev => {
+    console.log(ev.data);
+    score = JSON.parse(ev.data);
     updateDOM();
 });
 

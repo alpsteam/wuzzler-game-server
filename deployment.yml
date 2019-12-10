@@ -11,7 +11,7 @@ spec:
     spec:     # pod spec                  
       containers: 
       - name: game-server 
-        image: fra.ocir.io/orasealps/wuzzler/game-server:1.2 # image we pushed
+        image: fra.ocir.io/orasealps/wuzzler/game-server:1.3 # image we pushed
         ports:
         - containerPort: 8080
       imagePullSecrets:
