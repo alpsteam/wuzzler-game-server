@@ -82,20 +82,21 @@ background-color: #383e54;
 }
 .block_box  .first_box{
 	background-color:#21263c;
-	width:46%;
+	width:30%;
+	margin-left: 15%;
 	float:left;
 	padding: 8px 0px;
 }
 .block_box  .second_box{
 	background-color:#21263c;
-	width:46%;
+	width:30%;
 	float:left;
 	padding: 8px 0px;
 }
 .block_box .middle_divider{
 	float:left;
-	    margin-left: 10px;
-    margin-right: 10px;
+	    margin-left: 4px;
+    margin-right: 4px;
 }
 .block_box  .number {
 	color:#fff787;
@@ -113,16 +114,12 @@ background-color: #383e54;
  
   
   .block_box  .first_box{
-	width:44%;	
+	width:35%;	
 }
 .block_box  .second_box{
-	width:44%;
+	width:35%;
 }
-.block_box {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-}
+
 }
 
 @media (max-width: 560px) {
