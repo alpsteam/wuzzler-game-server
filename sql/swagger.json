@@ -1,0 +1,73 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "ORDS generated API for acw",
+        "version": "1.0.0"
+    },
+    "host": "js7elhijapblzqx-atpdb.adb.eu-frankfurt-1.oraclecloudapps.com",
+    "basePath": "/ords/acw/game",
+    "schemes": ["https"],
+    "produces": ["application/json"],
+    "paths": {
+        "/vector/{gameid}": {
+            "get": {
+                "description": "",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "output of the endpoint",
+                        "schema": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                },
+                "parameters": [{
+                    "name": "gameid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string",
+                    "description": "implicit",
+                    "pattern": "^[^/]+$"
+                }]
+            },
+            "post": {
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "output of the endpoint",
+                        "schema": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                },
+                "consumes": ["application/json"],
+                "parameters": [{
+                    "name": "gameid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string",
+                    "description": "implicit",
+                    "pattern": "^[^/]+$"
+                }, {
+                    "name": "payload",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/PAYLOAD1"
+                    }
+                }]
+            }
+        }
+    },
+    "definitions": {
+        "PAYLOAD1": {
+            "properties": {
+                "body": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
