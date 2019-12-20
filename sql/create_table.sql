@@ -1,0 +1,13 @@
+
+-- create schema acw before running this
+
+CREATE TABLE "ACW"."VECTOR" 
+   (	"GAMEID" NUMBER, 
+	"POSX" NUMBER, 
+	"POSY" NUMBER, 
+	"DIRX" NUMBER, 
+	"DIRY" NUMBER, 
+	"TSSTART" NUMBER, 
+	"TSEND" NUMBER
+   )  DEFAULT COLLATION "USING_NLS_COMP" ;
+
