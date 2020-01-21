@@ -13,4 +13,6 @@ grant dwrole to ADW_USER;
 
 (4) Create new workspace with database user `ADW_USER` and workspace name `ADW_USER`. Logout and sign in again into the new workspace.
 
+<img src="screenshot.png" width="500">
+
 (5) Go to `SQL Workshop`, `Restful Services` and import [ORDS_REST_ACW_acw_vector.sql](https://github.com/alpsteam/wuzzler-game-server/blob/master/sql/ORDS_REST_ACW_acw_vector.sql).
