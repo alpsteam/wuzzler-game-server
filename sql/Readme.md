@@ -15,7 +15,7 @@ grant dwrole to ADW_USER;
 
 <img src="screenshot.png" width="500">
 
-(5) Go to `SQL Workshop`, `Restful Services` and import [ORDS_REST_ACW_acw_vector.sql](https://github.com/alpsteam/wuzzler-game-server/blob/master/sql/ORDS_REST_ACW_acw_vector.sql).
+(5) Go to `SQL Workshop`, `Restful Services` and import [ORDS_REST_ACW_acw_vector.sql](https://github.com/alpsteam/wuzzler-game-server/blob/master/sql/ORDS_REST_ADW_USER_acw_2020_01_22.sql).
 
 (6) Finally run
 
