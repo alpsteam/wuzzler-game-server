@@ -39,14 +39,19 @@ kubectl create secret docker-registry ocirkey \
 kubectl get secrets
 ```
 
+#### Prepare cluster by setting up an ingress controller
+
+Follow instructions [here](https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengsettingupingresscontroller.htm) up until `Setting Up the Example Backend`. Instead of setting up an example backend use the steps below.
+
 #### Deploy the application
 
 Deploy the application with `kubectl create -f deployment.yml` (to update application use `kubectl apply -f deployment.yml`). Once the pods have been successfully deployed (test with `kubectl get all`, `kubectl get pods`).
 
 #### Expose the application
 
-Expose the application with a loadbalancer
+Expose the application with an ingress resource.
 
 ```
-kubectl expose deployment wuzzler-game-server-deployment --type="LoadBalancer"
+$ kubectl create -f ingress.yaml
 ```
+Use `kubectl get svc --all-namespaces` to check the public IP of the cluster.
