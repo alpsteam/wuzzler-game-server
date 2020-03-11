@@ -1,4 +1,4 @@
-SERVER_API_POINT = 'http://'+window.location.hostname+':8080/score';
+SERVER_API_POINT = 'http://'+window.location.hostname+'/score';
 
 // get DOM elements
 const html_game_id = document.querySelector('#game_id');
